@@ -37,6 +37,8 @@ namespace PartyMonkey.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.signin = new System.Windows.Forms.Button();
             this.signup = new System.Windows.Forms.Button();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -89,12 +91,24 @@ namespace PartyMonkey.Forms
             this.signup.UseVisualStyleBackColor = false;
             this.signup.Click += new System.EventHandler(this.signup_Click);
             // 
+            // logoPictureBox
+            // 
+            this.logoPictureBox.ErrorImage = null;
+            this.logoPictureBox.InitialImage = null;
+            this.logoPictureBox.Location = new System.Drawing.Point(136, 87);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(100, 100);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoPictureBox.TabIndex = 18;
+            this.logoPictureBox.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.logoPictureBox);
             this.Controls.Add(this.signup);
             this.Controls.Add(this.signin);
             this.Controls.Add(this.label2);
@@ -102,7 +116,7 @@ namespace PartyMonkey.Forms
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Hello";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,6 +128,7 @@ namespace PartyMonkey.Forms
         private System.Windows.Forms.Label label2;
         private Button signin;
         private Button signup;
+        private PictureBox logoPictureBox;
     }
 }
 

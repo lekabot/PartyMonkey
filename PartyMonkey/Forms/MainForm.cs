@@ -20,11 +20,8 @@ namespace PartyMonkey.Forms
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            
+            Image image = Image.FromFile("D:\\AAProjects\\C#\\PartyMonkey\\PartyMonkey\\PartyMonkey\\Resources\\logo.png");
+            logoPictureBox.Image = image;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModeratorWindow));
             this.label1 = new System.Windows.Forms.Label();
             this.timeTextBox = new System.Windows.Forms.Label();
             this.nameTextBox = new System.Windows.Forms.Label();
@@ -179,6 +180,7 @@
             this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.timeTextBox);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ModeratorWindow";
             this.Text = "ModeratorWindow";
             this.Load += new System.EventHandler(this.ModeratorWindow_Load);

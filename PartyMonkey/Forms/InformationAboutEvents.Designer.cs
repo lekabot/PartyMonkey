@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InformationAboutEvents));
             this.eventName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -121,7 +122,7 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Discription";
             // 
-            // informationAboutEvents
+            // InformationAboutEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -135,7 +136,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.eventName);
-            this.Name = "informationAboutEvents";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "InformationAboutEvents";
             this.Text = "informationAboutEvents";
             this.Load += new System.EventHandler(this.informationAboutEvents_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

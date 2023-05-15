@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrganaizerProfile));
             this.label2 = new System.Windows.Forms.Label();
             this.fio = new System.Windows.Forms.Label();
             this.gender1 = new System.Windows.Forms.Label();
@@ -173,7 +174,7 @@
             // 
             this.pictureOrganaizer.Location = new System.Drawing.Point(634, 87);
             this.pictureOrganaizer.Name = "pictureOrganaizer";
-            this.pictureOrganaizer.Size = new System.Drawing.Size(154, 152);
+            this.pictureOrganaizer.Size = new System.Drawing.Size(155, 155);
             this.pictureOrganaizer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureOrganaizer.TabIndex = 34;
             this.pictureOrganaizer.TabStop = false;
@@ -390,6 +391,7 @@
             this.Controls.Add(this.gender1);
             this.Controls.Add(this.fio);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OrganaizerProfile";
             this.Text = "Organaizer Profile";
             this.Load += new System.EventHandler(this.OrganaizerProfile_Load);
