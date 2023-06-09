@@ -203,7 +203,9 @@ namespace PartyMonkey.Forms
         private void pathToActivity_SelectedIndexChanged(object sender, EventArgs e)
         {
             string selectedValue = pathToActivity.SelectedItem.ToString();
-            activityGrid.DataSource = functions.sqlSelect($"SELECT [Activities].id, [Activities].title, [Events].[date], [Activities].[time] FROM [Activities] JOIN [Activity log] ON [Activities].[id] = [Activity log].activity_id JOIN [Events] ON [Events].id = [Activity log].event_id  WHERE [Activities].title = '{selectedValue}'");
+            activityGrid.DataSource = functions.sqlSelect($"SELECT [Activities].id, [Activities].title, [Events].[date], " +
+                $"[Activities].[time] FROM [Activities] JOIN [Activity log] ON [Activities].[id] = [Activity log].activity_id" +
+                $" JOIN [Events] ON [Events].id = [Activity log].event_id  WHERE [Activities].title = '{selectedValue}'");
             coloringRows();
         }
     }

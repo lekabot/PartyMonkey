@@ -110,5 +110,12 @@ namespace PartyMonkey.Forms
             mainForm.Show();
             this.Hide();
         }
+
+        private void participantsBT_Click(object sender, EventArgs e)
+        {
+            InformationAboutJutyModerator informationAboutJutyModerator = new InformationAboutJutyModerator();
+            informationAboutJutyModerator.Show();
+            this.Hide();
+        }
     }
 }

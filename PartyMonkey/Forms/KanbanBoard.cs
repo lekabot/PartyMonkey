@@ -14,39 +14,52 @@ namespace PartyMonkey.Forms
     public partial class KanbanBoard : Form, IBackForm
     {
         private string ChosenEvent { get; set; }
-        DBFunctions functions;
-        Button[] buttons;
-        List<string> eventsList;
-        string selectedValue;
-
+        private DBFunctions functions;
+        private Button[] buttons;
+        public List<string> eventsList { get; private set; }
+        private string selectedValue;
+        private int EventID { get; set; }
 
         public KanbanBoard()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            CreateButtons();
+            
         }
 
         private void KanbanBoard_Load(object sender, EventArgs e)
         {
             BackForm();
             GetListEventsForComBox();
+            
         }
 
         private void eventList_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedValue = eventList.SelectedItem.ToString();
+            EventID = functions.GetEventID(selectedValue);
+            CreateButtons();
         }
 
         private void ButtonClick(object sender, EventArgs e)
         {
-
+            NonModalWindow nonModalWindow = new NonModalWindow();
+            nonModalWindow.CreateWindow();
         }
 
         private void CreateButtons()
         {
-            List<string> tableNames = functions.GetNamesFromTable(functions.GetEventID(selectedValue));
+            if (buttons != null)
+            {
+                foreach (Button button in buttons)
+                {
+                    button.Click -= ButtonClick; // Удаляем обработчик события Click
+                    button.Dispose(); // Освобождаем ресурсы кнопки
+                }
+            }
+            List<string> tableNames = functions.GetNamesFromTable(EventID);
             buttons = new Button[tableNames.Count];
+
             Rectangle bounds = this.Bounds;
             int left = bounds.Left;
             int top = bounds.Top;
@@ -54,8 +67,8 @@ namespace PartyMonkey.Forms
             int height = bounds.Height;
             int buttonWidth = 365;
             int buttonHeight = 80;
-            int verticalSpacing = 45;
-            int horizontalSpacing = 45;
+            int verticalSpacing = 15;
+            int horizontalSpacing = 25;
             int buttonsPerRow = width / (buttonWidth + horizontalSpacing);
 
             int rowCount = (tableNames.Count + buttonsPerRow - 1) / buttonsPerRow; // Определение числа строк
@@ -70,11 +83,12 @@ namespace PartyMonkey.Forms
                     {
                         break; // Прекращаем цикл, если все кнопки уже созданы
                     }
-
+                    
                     Button button = new Button();
                     button.Text = tableNames[index];
                     button.Size = new Size(buttonWidth, buttonHeight);
-                    button.Location = new Point(col * (buttonWidth + horizontalSpacing) + 10, row * (buttonHeight + verticalSpacing) + 60);
+                    int columnToRender = col;
+                    button.Location = new Point(col * (buttonWidth + horizontalSpacing) + 25, row * (buttonHeight + verticalSpacing) + 200);
                     buttons[index] = button;
                     buttons[index].BackColor = System.Drawing.Color.White;
                     buttons[index].Cursor = System.Windows.Forms.Cursors.Hand;
@@ -82,23 +96,12 @@ namespace PartyMonkey.Forms
                     buttons[index].FlatAppearance.BorderSize = 2;
                     buttons[index].FlatStyle = System.Windows.Forms.FlatStyle.Flat;
                     buttons[index].Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
-                    buttons[index].Location = new System.Drawing.Point(33, 187);
-                    buttons[index].Name = "button1";
-                    buttons[index].Size = new System.Drawing.Size(365, 80);
-                    buttons[index].TabIndex = 60;
-                    buttons[index].Text = "Попрыгушки, 12:45, Лопатин";
-                    buttons[index].UseVisualStyleBackColor = false;
+                    buttons[index].Text = tableNames[index];
                     button.Click += new EventHandler(ButtonClick);
                     this.Controls.Add(button);
                 }
             }
         }
-
-        //private void GetChosenActivities()
-        //{
-        //    functions = new DBFunctions();
-        //    var FirstActivities = functions.sqlSelect($"SELECT ");
-        //}
 
         public void GetListEventsForComBox()
         {

@@ -123,6 +123,7 @@
             this.participantsBT.TabIndex = 36;
             this.participantsBT.Text = "Participants";
             this.participantsBT.UseVisualStyleBackColor = false;
+            this.participantsBT.Click += new System.EventHandler(this.participantsBT_Click);
             // 
             // eventVT
             // 
