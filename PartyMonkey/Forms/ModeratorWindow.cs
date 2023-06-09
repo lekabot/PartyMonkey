@@ -102,9 +102,8 @@ namespace PartyMonkey.Forms
             pathToActivity.ValueMember = "title";
         }
 
-        private void getListEventsForComBox()
+        public void getListEventsForComBox()
         {
-            
             DataTable resultTable = functions.sqlSelect("SELECT title FROM [dbo].[Events]");
             eventList.Items.Clear();
             foreach (DataRow row in resultTable.Rows)

@@ -13,7 +13,7 @@ using PartyMonkey.Classes;
 
 namespace PartyMonkey.Forms
 {
-    public partial class Authorization : Form
+    public partial class Authorization : Form, IBackForm
     {
         DataBank dataBank = new DataBank();
         DBFunctions functions = new DBFunctions();
@@ -24,13 +24,32 @@ namespace PartyMonkey.Forms
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
         }
+
         private void sign_in_Load(object sender, EventArgs e)
         {
-            
+
             PasswordTextBox.PasswordChar = '*';
             EmailTextBox.MaxLength = 150;
             EmailTextBox.MaxLength = 150;
+            BackForm();
         }
+
+        public void BackForm()
+        {
+            Button LogOut = new Button();
+            LogOut = Buttons.createButtonBack();
+            LogOut.Click += new System.EventHandler(this.LogOutEvent);
+            LogOut.BringToFront();
+            this.Controls.Add(LogOut);
+        }
+
+        private void LogOutEvent(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+        }
+
         private void signin_Click_1(object sender, EventArgs e)
         {
             
@@ -86,6 +105,7 @@ namespace PartyMonkey.Forms
                 }
             }
         }
+
         private void timer_Tick(object sender, EventArgs e)
         {
             signin.Enabled = true;

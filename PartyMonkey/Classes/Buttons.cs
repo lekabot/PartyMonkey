@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PartyMonkey.Forms;
 
 namespace PartyMonkey
 {
@@ -12,13 +13,28 @@ namespace PartyMonkey
         public static Button createButtonBack()
         {
             Button backButton = new Button();
-            backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
             backButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             backButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            backButton.Location = new System.Drawing.Point(667, 12);
-            backButton.Size = new System.Drawing.Size(121, 28);
+            backButton.Location = new System.Drawing.Point(15, 15);
+            backButton.FlatStyle = FlatStyle.Flat;
+            backButton.Size = new System.Drawing.Size(121, 40);
             backButton.TabIndex = 29;
             backButton.Text = "Back";
+            return backButton;
+        }
+
+        public static Button CreateButtonLogOut()
+        {
+            Button backButton = new Button();
+            backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
+            backButton.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            backButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            backButton.Location = new System.Drawing.Point(670, 15);
+            backButton.Size = new System.Drawing.Size(121, 40);
+            backButton.TabIndex = 29;
+            backButton.FlatStyle = FlatStyle.Flat;
+            backButton.Text = "Log out";
             return backButton;
         }
 

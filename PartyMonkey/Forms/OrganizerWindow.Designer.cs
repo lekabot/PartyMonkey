@@ -44,7 +44,7 @@
             // 
             this.nameTextBox.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.nameTextBox.Location = new System.Drawing.Point(234, 127);
+            this.nameTextBox.Location = new System.Drawing.Point(243, 188);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(371, 30);
             this.nameTextBox.TabIndex = 30;
@@ -55,7 +55,7 @@
             this.timeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.timeTextBox.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.timeTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.timeTextBox.Location = new System.Drawing.Point(234, 97);
+            this.timeTextBox.Location = new System.Drawing.Point(243, 186);
             this.timeTextBox.Name = "timeTextBox";
             this.timeTextBox.Size = new System.Drawing.Size(371, 30);
             this.timeTextBox.TabIndex = 29;
@@ -69,15 +69,15 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label1.Location = new System.Drawing.Point(230, 9);
+            this.label1.Location = new System.Drawing.Point(266, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(380, 51);
+            this.label1.Size = new System.Drawing.Size(335, 51);
             this.label1.TabIndex = 28;
-            this.label1.Text = "Moderator\'s window";
+            this.label1.Text = "Organizer window";
             // 
             // pictureOrganaizer
             // 
-            this.pictureOrganaizer.Location = new System.Drawing.Point(30, 97);
+            this.pictureOrganaizer.Location = new System.Drawing.Point(41, 118);
             this.pictureOrganaizer.Name = "pictureOrganaizer";
             this.pictureOrganaizer.Size = new System.Drawing.Size(181, 250);
             this.pictureOrganaizer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -90,7 +90,7 @@
             this.myProfileBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.myProfileBT.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.myProfileBT.ForeColor = System.Drawing.Color.White;
-            this.myProfileBT.Location = new System.Drawing.Point(47, 378);
+            this.myProfileBT.Location = new System.Drawing.Point(58, 399);
             this.myProfileBT.Name = "myProfileBT";
             this.myProfileBT.Size = new System.Drawing.Size(150, 60);
             this.myProfileBT.TabIndex = 32;
@@ -104,7 +104,7 @@
             this.jutyBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.jutyBT.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.jutyBT.ForeColor = System.Drawing.Color.White;
-            this.jutyBT.Location = new System.Drawing.Point(239, 353);
+            this.jutyBT.Location = new System.Drawing.Point(250, 374);
             this.jutyBT.Name = "jutyBT";
             this.jutyBT.Size = new System.Drawing.Size(362, 86);
             this.jutyBT.TabIndex = 35;
@@ -117,7 +117,7 @@
             this.participantsBT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.participantsBT.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.participantsBT.ForeColor = System.Drawing.Color.White;
-            this.participantsBT.Location = new System.Drawing.Point(239, 261);
+            this.participantsBT.Location = new System.Drawing.Point(250, 282);
             this.participantsBT.Name = "participantsBT";
             this.participantsBT.Size = new System.Drawing.Size(362, 86);
             this.participantsBT.TabIndex = 36;
@@ -130,7 +130,7 @@
             this.eventVT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eventVT.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.eventVT.ForeColor = System.Drawing.Color.White;
-            this.eventVT.Location = new System.Drawing.Point(239, 169);
+            this.eventVT.Location = new System.Drawing.Point(250, 190);
             this.eventVT.Name = "eventVT";
             this.eventVT.Size = new System.Drawing.Size(362, 86);
             this.eventVT.TabIndex = 37;
@@ -143,7 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 506);
             this.Controls.Add(this.eventVT);
             this.Controls.Add(this.participantsBT);
             this.Controls.Add(this.jutyBT);

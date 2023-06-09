@@ -65,7 +65,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(293, 9);
+            this.label2.Location = new System.Drawing.Point(290, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(208, 51);
             this.label2.TabIndex = 16;
@@ -76,7 +76,7 @@
             this.fio.AutoSize = true;
             this.fio.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.fio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.fio.Location = new System.Drawing.Point(22, 119);
+            this.fio.Location = new System.Drawing.Point(19, 179);
             this.fio.Name = "fio";
             this.fio.Size = new System.Drawing.Size(100, 23);
             this.fio.TabIndex = 17;
@@ -87,7 +87,7 @@
             this.gender1.AutoSize = true;
             this.gender1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gender1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.gender1.Location = new System.Drawing.Point(51, 188);
+            this.gender1.Location = new System.Drawing.Point(48, 248);
             this.gender1.Name = "gender1";
             this.gender1.Size = new System.Drawing.Size(71, 23);
             this.gender1.TabIndex = 18;
@@ -98,7 +98,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label3.Location = new System.Drawing.Point(39, 228);
+            this.label3.Location = new System.Drawing.Point(36, 288);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(83, 23);
             this.label3.TabIndex = 19;
@@ -109,7 +109,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label4.Location = new System.Drawing.Point(17, 260);
+            this.label4.Location = new System.Drawing.Point(14, 320);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 23);
             this.label4.TabIndex = 20;
@@ -120,7 +120,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label5.Location = new System.Drawing.Point(46, 296);
+            this.label5.Location = new System.Drawing.Point(43, 356);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(76, 23);
             this.label5.TabIndex = 21;
@@ -131,7 +131,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label6.Location = new System.Drawing.Point(62, 336);
+            this.label6.Location = new System.Drawing.Point(59, 396);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 23);
             this.label6.TabIndex = 22;
@@ -142,7 +142,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label7.Location = new System.Drawing.Point(56, 372);
+            this.label7.Location = new System.Drawing.Point(53, 432);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 23);
             this.label7.TabIndex = 23;
@@ -153,7 +153,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label1.Location = new System.Drawing.Point(26, 87);
+            this.label1.Location = new System.Drawing.Point(23, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 23);
             this.label1.TabIndex = 25;
@@ -164,7 +164,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label8.Location = new System.Drawing.Point(22, 152);
+            this.label8.Location = new System.Drawing.Point(19, 212);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 23);
             this.label8.TabIndex = 25;
@@ -172,7 +172,7 @@
             // 
             // pictureOrganaizer
             // 
-            this.pictureOrganaizer.Location = new System.Drawing.Point(634, 87);
+            this.pictureOrganaizer.Location = new System.Drawing.Point(631, 147);
             this.pictureOrganaizer.Name = "pictureOrganaizer";
             this.pictureOrganaizer.Size = new System.Drawing.Size(155, 155);
             this.pictureOrganaizer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -185,7 +185,7 @@
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox10.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.textBox10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.textBox10.Location = new System.Drawing.Point(633, 276);
+            this.textBox10.Location = new System.Drawing.Point(630, 336);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(154, 30);
             this.textBox10.TabIndex = 37;
@@ -196,7 +196,7 @@
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox11.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.textBox11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.textBox11.Location = new System.Drawing.Point(634, 316);
+            this.textBox11.Location = new System.Drawing.Point(631, 376);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(154, 30);
             this.textBox11.TabIndex = 38;
@@ -206,7 +206,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label9.Location = new System.Drawing.Point(540, 283);
+            this.label9.Location = new System.Drawing.Point(537, 343);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 23);
             this.label9.TabIndex = 39;
@@ -217,7 +217,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label10.Location = new System.Drawing.Point(480, 319);
+            this.label10.Location = new System.Drawing.Point(477, 379);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(148, 23);
             this.label10.TabIndex = 40;
@@ -229,7 +229,7 @@
             this.signin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signin.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.signin.ForeColor = System.Drawing.Color.White;
-            this.signin.Location = new System.Drawing.Point(674, 397);
+            this.signin.Location = new System.Drawing.Point(671, 457);
             this.signin.Name = "signin";
             this.signin.Size = new System.Drawing.Size(114, 41);
             this.signin.TabIndex = 42;
@@ -243,7 +243,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(554, 397);
+            this.button1.Location = new System.Drawing.Point(551, 457);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 41);
             this.button1.TabIndex = 43;
@@ -255,7 +255,7 @@
             // 
             this.firstName.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.firstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.firstName.Location = new System.Drawing.Point(128, 119);
+            this.firstName.Location = new System.Drawing.Point(125, 179);
             this.firstName.Name = "firstName";
             this.firstName.Size = new System.Drawing.Size(291, 23);
             this.firstName.TabIndex = 44;
@@ -264,7 +264,7 @@
             // 
             this.lastName.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.lastName.Location = new System.Drawing.Point(128, 87);
+            this.lastName.Location = new System.Drawing.Point(125, 147);
             this.lastName.Name = "lastName";
             this.lastName.Size = new System.Drawing.Size(291, 23);
             this.lastName.TabIndex = 45;
@@ -273,7 +273,7 @@
             // 
             this.patronymic.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.patronymic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.patronymic.Location = new System.Drawing.Point(128, 152);
+            this.patronymic.Location = new System.Drawing.Point(125, 212);
             this.patronymic.Name = "patronymic";
             this.patronymic.Size = new System.Drawing.Size(291, 23);
             this.patronymic.TabIndex = 46;
@@ -282,7 +282,7 @@
             // 
             this.gender.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.gender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.gender.Location = new System.Drawing.Point(128, 188);
+            this.gender.Location = new System.Drawing.Point(125, 248);
             this.gender.Name = "gender";
             this.gender.Size = new System.Drawing.Size(291, 23);
             this.gender.TabIndex = 47;
@@ -291,7 +291,7 @@
             // 
             this.birtday.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.birtday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.birtday.Location = new System.Drawing.Point(128, 228);
+            this.birtday.Location = new System.Drawing.Point(125, 288);
             this.birtday.Name = "birtday";
             this.birtday.Size = new System.Drawing.Size(291, 23);
             this.birtday.TabIndex = 48;
@@ -300,7 +300,7 @@
             // 
             this.idNumber.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.idNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.idNumber.Location = new System.Drawing.Point(128, 263);
+            this.idNumber.Location = new System.Drawing.Point(125, 323);
             this.idNumber.Name = "idNumber";
             this.idNumber.Size = new System.Drawing.Size(291, 23);
             this.idNumber.TabIndex = 49;
@@ -309,7 +309,7 @@
             // 
             this.country.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.country.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.country.Location = new System.Drawing.Point(128, 299);
+            this.country.Location = new System.Drawing.Point(125, 359);
             this.country.Name = "country";
             this.country.Size = new System.Drawing.Size(291, 23);
             this.country.TabIndex = 50;
@@ -318,7 +318,7 @@
             // 
             this.phone.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.phone.Location = new System.Drawing.Point(128, 335);
+            this.phone.Location = new System.Drawing.Point(125, 395);
             this.phone.Name = "phone";
             this.phone.Size = new System.Drawing.Size(291, 23);
             this.phone.TabIndex = 51;
@@ -327,7 +327,7 @@
             // 
             this.email.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.email.Location = new System.Drawing.Point(128, 372);
+            this.email.Location = new System.Drawing.Point(125, 432);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(291, 23);
             this.email.TabIndex = 52;
@@ -337,7 +337,7 @@
             this.changePassword.AutoSize = true;
             this.changePassword.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.changePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.changePassword.Location = new System.Drawing.Point(602, 247);
+            this.changePassword.Location = new System.Drawing.Point(599, 307);
             this.changePassword.Name = "changePassword";
             this.changePassword.Size = new System.Drawing.Size(151, 27);
             this.changePassword.TabIndex = 53;
@@ -349,7 +349,7 @@
             this.visiblePassword.AutoSize = true;
             this.visiblePassword.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.visiblePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.visiblePassword.Location = new System.Drawing.Point(602, 352);
+            this.visiblePassword.Location = new System.Drawing.Point(599, 412);
             this.visiblePassword.Name = "visiblePassword";
             this.visiblePassword.Size = new System.Drawing.Size(146, 27);
             this.visiblePassword.TabIndex = 54;
@@ -362,7 +362,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 506);
             this.Controls.Add(this.visiblePassword);
             this.Controls.Add(this.changePassword);
             this.Controls.Add(this.email);

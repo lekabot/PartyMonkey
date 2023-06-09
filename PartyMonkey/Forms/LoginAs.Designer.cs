@@ -156,7 +156,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginAs";
             this.Text = "LoginAs";
-            this.Load += new System.EventHandler(this.LoginAs_Load);
+            this.Load += new System.EventHandler(this.Loader);
             this.ResumeLayout(false);
             this.PerformLayout();
 

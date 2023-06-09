@@ -11,7 +11,7 @@ namespace PartyMonkey
 {
     class DataBase
     {
-        public static string connectionString = @"Data Source=DESKTOP-N79SNU4;Database=Test;Integrated Security=True";
+        public static string connectionString = @"Data Source=DESKTOP-N79SNU4;Database=PartyMonkey;Integrated Security=True";
         public SqlConnection sqlConnection = new SqlConnection(connectionString);
 
         public void openConnection()

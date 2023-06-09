@@ -44,7 +44,7 @@ namespace PartyMonkey.Forms
             this.label_passwd.AutoSize = true;
             this.label_passwd.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_passwd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label_passwd.Location = new System.Drawing.Point(158, 250);
+            this.label_passwd.Location = new System.Drawing.Point(154, 307);
             this.label_passwd.Name = "label_passwd";
             this.label_passwd.Size = new System.Drawing.Size(103, 29);
             this.label_passwd.TabIndex = 11;
@@ -55,7 +55,7 @@ namespace PartyMonkey.Forms
             this.label_name.AutoSize = true;
             this.label_name.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label_name.Location = new System.Drawing.Point(187, 180);
+            this.label_name.Location = new System.Drawing.Point(183, 237);
             this.label_name.Name = "label_name";
             this.label_name.Size = new System.Drawing.Size(74, 29);
             this.label_name.TabIndex = 10;
@@ -67,7 +67,7 @@ namespace PartyMonkey.Forms
             this.PasswordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PasswordTextBox.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PasswordTextBox.ForeColor = System.Drawing.Color.Black;
-            this.PasswordTextBox.Location = new System.Drawing.Point(284, 245);
+            this.PasswordTextBox.Location = new System.Drawing.Point(280, 302);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(250, 41);
             this.PasswordTextBox.TabIndex = 9;
@@ -80,7 +80,7 @@ namespace PartyMonkey.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label1.Location = new System.Drawing.Point(275, 86);
+            this.label1.Location = new System.Drawing.Point(271, 143);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(259, 51);
             this.label1.TabIndex = 8;
@@ -92,7 +92,7 @@ namespace PartyMonkey.Forms
             this.EmailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.EmailTextBox.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.EmailTextBox.ForeColor = System.Drawing.Color.Black;
-            this.EmailTextBox.Location = new System.Drawing.Point(284, 175);
+            this.EmailTextBox.Location = new System.Drawing.Point(280, 232);
             this.EmailTextBox.Name = "EmailTextBox";
             this.EmailTextBox.Size = new System.Drawing.Size(250, 41);
             this.EmailTextBox.TabIndex = 7;
@@ -106,7 +106,7 @@ namespace PartyMonkey.Forms
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.linkLabel2.LinkColor = System.Drawing.Color.White;
-            this.linkLabel2.Location = new System.Drawing.Point(362, 409);
+            this.linkLabel2.Location = new System.Drawing.Point(358, 466);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(80, 13);
             this.linkLabel2.TabIndex = 13;
@@ -120,7 +120,7 @@ namespace PartyMonkey.Forms
             this.signin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signin.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.signin.ForeColor = System.Drawing.Color.White;
-            this.signin.Location = new System.Drawing.Point(329, 330);
+            this.signin.Location = new System.Drawing.Point(325, 387);
             this.signin.Name = "signin";
             this.signin.Size = new System.Drawing.Size(167, 60);
             this.signin.TabIndex = 21;
@@ -133,7 +133,7 @@ namespace PartyMonkey.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 506);
             this.Controls.Add(this.signin);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label_passwd);

@@ -58,15 +58,26 @@ namespace PartyMonkey
 
             return tableNames;
         }
-        public List<string> GetNamesFromTable()
+
+        public int GetEventID(string EventName)
+        {
+            var id = Convert.ToInt32(sqlSelect($"SELECT id FROM [Events] WHERE title = '{EventName}'").Rows[0][0]);
+
+            return id
+        }
+
+        public List<string> GetNamesFromTable(int event_id)
         {
             List<string> namesList = new List<string>();
 
-            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-N79SNU4;Database=Test;Integrated Security=True"))
+            using (SqlConnection connection = new SqlConnection(DataBase.connectionString))
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand("SELECT name FROM products", connection);
+                SqlCommand command = new SqlCommand($"SELECT Activities.title, " +
+                    $"Activities.[time], Jury.[last name] FROM [Activity log] JOIN Activities ON Activities.id = " +
+                    $"[Activity log].activity_id JOIN Jury ON Jury.id = [Activity log].jury_id WHERE " +
+                    $"event_id = {event_id}", connection);
 
                 SqlDataReader reader = command.ExecuteReader();
 

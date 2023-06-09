@@ -1,19 +1,14 @@
 ﻿using PartyMonkey.Classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PartyMonkey.Forms
 {
-    public partial class OrganizerWindow : Form
+    public partial class OrganizerWindow : Form, IBackForm
     {
         DBFunctions functions = new DBFunctions();
 
@@ -28,6 +23,16 @@ namespace PartyMonkey.Forms
             checkTimeForLabel();
             getGender();
             getAndSetPhoto();
+            BackForm();
+        }
+
+        public void BackForm()
+        {
+            Button LogOut = new Button();
+            LogOut = Buttons.CreateButtonLogOut();
+            LogOut.Click += new System.EventHandler(this.LogOutEvent);
+            LogOut.BringToFront();
+            this.Controls.Add(LogOut);
         }
 
         private void getGender()
@@ -94,9 +99,16 @@ namespace PartyMonkey.Forms
 
         private void eventVT_Click(object sender, EventArgs e)
         {
-            CreateEventWindow createEventWindow = new CreateEventWindow();
+            EventWindow createEventWindow = new EventWindow();
             this.Hide();
             createEventWindow.Show();
+        }
+
+        private void LogOutEvent(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            this.Hide();
         }
     }
 }

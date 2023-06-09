@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Button = System.Windows.Forms.Button;
 
 namespace PartyMonkey.Forms
 {
@@ -30,6 +31,23 @@ namespace PartyMonkey.Forms
         {
             getAndSetPhoto();
             getOrganaizerAccauntData();
+            GenerateIdNumber();
+            createButton();
+        }
+
+        private void createButton()
+        {
+            Button BackToModeratorWin = new Button();
+            BackToModeratorWin = Buttons.createButtonBack();
+            BackToModeratorWin.Click += new System.EventHandler(this.BackEvent);
+            BackToModeratorWin.BringToFront();
+            this.Controls.Add(BackToModeratorWin);
+
+            Button LogOut = new Button();
+            LogOut = Buttons.CreateButtonLogOut();
+            LogOut.Click += new System.EventHandler(this.LogOutEvent);
+            LogOut.BringToFront();
+            this.Controls.Add(LogOut);
         }
 
         private void getAndSetPhoto()
@@ -45,6 +63,12 @@ namespace PartyMonkey.Forms
                     pictureOrganaizer.Image = image;
                 }
             }
+        }
+
+        private void GenerateIdNumber()
+        {
+            Random random = new Random();
+            idNumber.Text = random.Next(10000000, 99999999).ToString();
         }
 
         private void getOrganaizerAccauntData()
@@ -110,6 +134,20 @@ namespace PartyMonkey.Forms
             OrganizerWindow organizerWindow = new OrganizerWindow();
             this.Hide();
             organizerWindow.Show();
+        }
+
+        private void BackEvent(object sender, EventArgs e)
+        {
+            OrganizerWindow organizerWindow = new OrganizerWindow();
+            organizerWindow.Show();
+            this.Hide();
+        }
+
+        private void LogOutEvent(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
+            this.Hide();
         }
     }
 }
