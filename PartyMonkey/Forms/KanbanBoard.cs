@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
 
 namespace PartyMonkey.Forms
 {
@@ -19,6 +20,8 @@ namespace PartyMonkey.Forms
         public List<string> eventsList { get; private set; }
         private string selectedValue;
         private int EventID { get; set; }
+        private Button draggingButton = null;
+        private string ButtonTextForDandD;
 
         public KanbanBoard()
         {
@@ -43,6 +46,7 @@ namespace PartyMonkey.Forms
 
         private void ButtonClick(object sender, EventArgs e)
         {
+            Button button = (Button)sender;
             NonModalWindow nonModalWindow = new NonModalWindow();
             nonModalWindow.CreateWindow();
         }
@@ -53,14 +57,16 @@ namespace PartyMonkey.Forms
             {
                 foreach (Button button in buttons)
                 {
-                    button.Click -= ButtonClick; // Удаляем обработчик события Click
+                    button.Click -= ButtonClick;
+                    button.MouseDown -= ButtonMouseDown;
+                    button.AllowDrop = false;
                     button.Dispose(); // Освобождаем ресурсы кнопки
                 }
             }
             List<string> tableNames = functions.GetNamesFromTable(EventID);
             buttons = new Button[tableNames.Count];
 
-            Rectangle bounds = this.Bounds;
+            System.Drawing.Rectangle bounds = this.Bounds;
             int left = bounds.Left;
             int top = bounds.Top;
             int width = bounds.Width;
@@ -85,6 +91,10 @@ namespace PartyMonkey.Forms
                     }
                     
                     Button button = new Button();
+                    button.MouseDown += ButtonMouseDown;
+                    button.AllowDrop = true;
+                    button.DragEnter += ButtonDragEnter;
+                    button.DragDrop += ButtonDragDrop;
                     button.Text = tableNames[index];
                     button.Size = new Size(buttonWidth, buttonHeight);
                     int columnToRender = col;
@@ -100,6 +110,32 @@ namespace PartyMonkey.Forms
                     button.Click += new EventHandler(ButtonClick);
                     this.Controls.Add(button);
                 }
+            }
+        }
+
+        private void ButtonMouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                draggingButton = (Button)sender;
+                draggingButton.DoDragDrop(draggingButton.Text, DragDropEffects.Move);
+            }
+        }
+
+        private void ButtonDragEnter(object sender, DragEventArgs e)
+        {
+            e.Effect = DragDropEffects.Move;
+        }
+
+        private void ButtonDragDrop(object sender, DragEventArgs e)
+        {
+            Button targetButton = (Button)sender;
+            ButtonTextForDandD = targetButton.Text;
+            targetButton.Text = (string)e.Data.GetData(typeof(string));
+            draggingButton.Text = ButtonTextForDandD;
+            if (targetButton.Text == draggingButton.Text)
+            {
+                ButtonClick(sender, e);
             }
         }
 
@@ -143,6 +179,19 @@ namespace PartyMonkey.Forms
             MainForm mainForm = new MainForm();
             mainForm.Show();
             this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (eventList.SelectedItem.ToString() != null)
+            {
+                List<string> tableNames = functions.GetNamesFromTable(EventID);
+
+            }
+            else
+            {
+                MessageBox.Show("You have not selected an activity");
+            }
         }
     }
 }

@@ -54,7 +54,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label2.Location = new System.Drawing.Point(132, 118);
+            this.label2.Location = new System.Drawing.Point(132, 117);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 27);
             this.label2.TabIndex = 32;
@@ -67,7 +67,7 @@
             this.eventList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.eventList.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.eventList.FormattingEnabled = true;
-            this.eventList.Location = new System.Drawing.Point(201, 114);
+            this.eventList.Location = new System.Drawing.Point(201, 115);
             this.eventList.Name = "eventList";
             this.eventList.Size = new System.Drawing.Size(383, 31);
             this.eventList.TabIndex = 48;
@@ -79,12 +79,13 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(650, 114);
+            this.button2.Location = new System.Drawing.Point(640, 111);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 42);
+            this.button2.Size = new System.Drawing.Size(73, 39);
             this.button2.TabIndex = 59;
             this.button2.Text = "pdf";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // KanbanBoard
             // 

@@ -95,7 +95,7 @@ namespace PartyMonkey
                         sb.Append(title);
                         sb.Append(", ");
                         sb.Append(time.ToString());
-                        sb.Append(", \n");
+                        sb.Append(", ");
                         sb.Append(lastName);
                         namesList.Add(sb.ToString());
                     }
