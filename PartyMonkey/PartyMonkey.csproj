@@ -116,6 +116,12 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ModearatorActivites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModearatorActivites.Designer.cs">
+      <DependentUpon>ModearatorActivites.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ModeratorJury_Registration.cs">
       <SubType>Form</SubType>
     </Compile>

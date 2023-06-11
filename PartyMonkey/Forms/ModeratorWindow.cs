@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace PartyMonkey.Forms
 {
-    public partial class ModeratorWindow : Form
+    public partial class ModeratorWindow : Form, IBackForm
     {
         DBFunctions functions = new DBFunctions();
         int eventID { get; set; }
@@ -43,7 +43,7 @@ namespace PartyMonkey.Forms
             {
                 foreach (DataRow row in gotActivitiesModerator.Rows)
                 {
-                    int idActivity = Convert.ToInt32(row["activity_id"]);
+                    int idActivity = Convert.ToInt32(row["activity_id"]);//Фиксить
 
                     foreach (DataGridViewRow gridRow in activityGrid.Rows)
                     {
@@ -207,6 +207,29 @@ namespace PartyMonkey.Forms
                 $"[Activities].[time] FROM [Activities] JOIN [Activity log] ON [Activities].[id] = [Activity log].activity_id" +
                 $" JOIN [Events] ON [Events].id = [Activity log].event_id  WHERE [Activities].title = '{selectedValue}'");
             coloringRows();
+        }
+
+        public void BackForm()
+        {
+            Button BackToModeratorWin = new Button();
+            BackToModeratorWin = Buttons.CreateButtonBack();
+            BackToModeratorWin.Click += new System.EventHandler(this.BackEvent);
+            BackToModeratorWin.BringToFront();
+            this.Controls.Add(BackToModeratorWin);
+        }
+
+        private void BackEvent(object sender, EventArgs e)
+        {
+            OrganizerWindow organizerWindow = new OrganizerWindow();
+            organizerWindow.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ModearatorActivites modearatorActivites = new ModearatorActivites();
+            modearatorActivites.Show();
+            this.Hide();
         }
     }
 }

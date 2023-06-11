@@ -52,10 +52,12 @@
             this.password = new System.Windows.Forms.TextBox();
             this.pictureOrganaizer = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.s = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.eventList = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.phone = new System.Windows.Forms.MaskedTextBox();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureOrganaizer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -232,7 +234,7 @@
             this.visiblePassword.AutoSize = true;
             this.visiblePassword.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.visiblePassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.visiblePassword.Location = new System.Drawing.Point(601, 457);
+            this.visiblePassword.Location = new System.Drawing.Point(601, 524);
             this.visiblePassword.Name = "visiblePassword";
             this.visiblePassword.Size = new System.Drawing.Size(156, 27);
             this.visiblePassword.TabIndex = 74;
@@ -246,7 +248,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(553, 502);
+            this.button1.Location = new System.Drawing.Point(553, 569);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 41);
             this.button1.TabIndex = 73;
@@ -260,7 +262,7 @@
             this.signin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signin.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.signin.ForeColor = System.Drawing.Color.White;
-            this.signin.Location = new System.Drawing.Point(673, 502);
+            this.signin.Location = new System.Drawing.Point(673, 569);
             this.signin.Name = "signin";
             this.signin.Size = new System.Drawing.Size(114, 41);
             this.signin.TabIndex = 72;
@@ -272,7 +274,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label10.Location = new System.Drawing.Point(479, 424);
+            this.label10.Location = new System.Drawing.Point(479, 491);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(148, 23);
             this.label10.TabIndex = 71;
@@ -283,7 +285,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label9.Location = new System.Drawing.Point(539, 388);
+            this.label9.Location = new System.Drawing.Point(539, 455);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 23);
             this.label9.TabIndex = 70;
@@ -295,7 +297,7 @@
             this.passwordRepeate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.passwordRepeate.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.passwordRepeate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.passwordRepeate.Location = new System.Drawing.Point(633, 421);
+            this.passwordRepeate.Location = new System.Drawing.Point(633, 488);
             this.passwordRepeate.Name = "passwordRepeate";
             this.passwordRepeate.Size = new System.Drawing.Size(154, 30);
             this.passwordRepeate.TabIndex = 69;
@@ -306,16 +308,16 @@
             this.password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.password.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.password.Location = new System.Drawing.Point(632, 381);
+            this.password.Location = new System.Drawing.Point(632, 448);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(154, 30);
             this.password.TabIndex = 68;
             // 
             // pictureOrganaizer
             // 
-            this.pictureOrganaizer.Location = new System.Drawing.Point(543, 150);
+            this.pictureOrganaizer.Location = new System.Drawing.Point(543, 160);
             this.pictureOrganaizer.Name = "pictureOrganaizer";
-            this.pictureOrganaizer.Size = new System.Drawing.Size(245, 197);
+            this.pictureOrganaizer.Size = new System.Drawing.Size(245, 254);
             this.pictureOrganaizer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureOrganaizer.TabIndex = 67;
             this.pictureOrganaizer.TabStop = false;
@@ -326,7 +328,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold);
             this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.checkBox1.Location = new System.Drawing.Point(207, 457);
+            this.checkBox1.Location = new System.Drawing.Point(207, 486);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(188, 27);
             this.checkBox1.TabIndex = 75;
@@ -334,35 +336,34 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // textBox4
+            // s
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Location = new System.Drawing.Point(145, 417);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(250, 30);
-            this.textBox4.TabIndex = 77;
-            this.textBox4.Text = "Doesn not exist";
+            this.s.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.s.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.s.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.s.ForeColor = System.Drawing.Color.Black;
+            this.s.Location = new System.Drawing.Point(145, 446);
+            this.s.Name = "s";
+            this.s.Size = new System.Drawing.Size(250, 30);
+            this.s.TabIndex = 77;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label6.Location = new System.Drawing.Point(49, 419);
+            this.label6.Location = new System.Drawing.Point(18, 448);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 23);
+            this.label6.Size = new System.Drawing.Size(121, 23);
             this.label6.TabIndex = 76;
-            this.label6.Text = "Direction:";
+            this.label6.Text = "Specialization:";
             // 
             // eventList
             // 
             this.eventList.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.eventList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
             this.eventList.FormattingEnabled = true;
-            this.eventList.Location = new System.Drawing.Point(145, 490);
+            this.eventList.Location = new System.Drawing.Point(145, 519);
             this.eventList.Name = "eventList";
             this.eventList.Size = new System.Drawing.Size(250, 31);
             this.eventList.TabIndex = 79;
@@ -372,20 +373,43 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
-            this.label7.Location = new System.Drawing.Point(75, 493);
+            this.label7.Location = new System.Drawing.Point(75, 522);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 23);
             this.label7.TabIndex = 78;
             this.label7.Text = "Event:";
             // 
+            // phone
+            // 
+            this.phone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.phone.Font = new System.Drawing.Font("Comic Sans MS", 12F);
+            this.phone.Location = new System.Drawing.Point(145, 410);
+            this.phone.Mask = "+7(000)-00-0000";
+            this.phone.Name = "phone";
+            this.phone.Size = new System.Drawing.Size(250, 30);
+            this.phone.TabIndex = 80;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
+            this.label11.Location = new System.Drawing.Point(75, 413);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 23);
+            this.label11.TabIndex = 81;
+            this.label11.Text = "Phone:";
+            // 
             // Moderator_RegistrationJury
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 555);
+            this.ClientSize = new System.Drawing.Size(800, 616);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.phone);
             this.Controls.Add(this.eventList);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.s);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.visiblePassword);
@@ -445,9 +469,11 @@
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.PictureBox pictureOrganaizer;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox s;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox eventList;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.MaskedTextBox phone;
+        private System.Windows.Forms.Label label11;
     }
 }

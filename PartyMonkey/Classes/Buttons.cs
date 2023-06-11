@@ -10,7 +10,7 @@ namespace PartyMonkey
 {
     internal class Buttons
     {
-        public static Button createButtonBack()
+        public static Button CreateButtonBack()
         {
             Button backButton = new Button();
             backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));

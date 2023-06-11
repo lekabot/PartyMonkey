@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace PartyMonkey.Forms
         public string Gender { get; set; }
         public string Role { get; set; }
         public string Password { get; set; }
+        public string Photo { get; set; }
+        public string PathToDeafaulPhoto { get; set; } = "D://AAProjects//C#//PartyMonkey//PartyMonkey//PartyMonkey//Resources//DefIconModerJury.png";
 
         public Moderator_RegistrationJury()
         {
@@ -30,7 +33,7 @@ namespace PartyMonkey.Forms
         {
             password.PasswordChar = '*';
             passwordRepeate.PasswordChar = '*';
-            pictureOrganaizer.Image = Image.FromFile("D://AAProjects//C#//PartyMonkey//PartyMonkey//PartyMonkey//Resources//DefIconModerJury.png");
+            pictureOrganaizer.Image = Image.FromFile(PathToDeafaulPhoto);
             GetGendersForComboBox();
             GetRolesForComboBox();
             BackForm();
@@ -47,7 +50,7 @@ namespace PartyMonkey.Forms
         {
             List<string> fields = new List<string>
             {
-                ln.Text, fn.Text, p.Text, g.Text, r.Text, e.Text, password.Text, passwordRepeate.Text
+                ln.Text, fn.Text, p.Text, g.Text, r.Text, e.Text, password.Text, passwordRepeate.Text, phone.Text, s.Text
             };
             if (!CheckIsFieldIsNotOrWhiteSpace(fields))
             {
@@ -76,39 +79,57 @@ namespace PartyMonkey.Forms
         private void AddEventForModeratorJuty()
         {
             database = new DataBase();
-            if (checkBox1.Checked)
+            functions = new DBFunctions();
+            int newId;
+            try
             {
-                //var event_id = functions.GetEventID(eventList.SelectedItem.ToString());
-            }
-            else
-            {
-                try
+                if (CheckPasswordIsCorrect())
                 {
-                    if (CheckPasswordIsCorrect())
+                    string query = $"INSERT INTO {r.Text} ([last name], [first name], [patronymic], [gender], [e-mail], [password], [phone], [specialization]) " +
+                                   "VALUES (@lastName, @firstName, @patronymic, @gender, @email, @password, @phone, @specialization) SELECT SCOPE_IDENTITY()";
+                    using (SqlConnection connection = new SqlConnection(DataBase.connectionString))
                     {
-                        string query = $"INSERT INTO {r.Text} ([last name], [first name], [patronymic], [gender], [e-mail], [password]) " +
-                                       "VALUES (@lastName, @firstName, @patronymic, @gender, @email, @password)";
-
-                        database.openConnection();
-                        SqlCommand command = new SqlCommand(query, DataBase.sqlConnection);
-                        command.Parameters.AddWithValue("@lastName", ln.Text);
-                        command.Parameters.AddWithValue("@firstName", fn.Text);
-                        command.Parameters.AddWithValue("@patronymic", p.Text);
-                        command.Parameters.AddWithValue("@gender", g.Text);
-                        command.Parameters.AddWithValue("@email", e.Text);
-                        command.Parameters.AddWithValue("@password", Password);
-                        command.ExecuteNonQuery();
-                        database.closeConnection();
-                        MessageBox.Show("Profile has been added");
+                        using (SqlCommand command = new SqlCommand(query, connection))
+                        {
+                            connection.Open();
+                            command.Parameters.AddWithValue("@lastName", ln.Text);
+                            command.Parameters.AddWithValue("@firstName", fn.Text);
+                            command.Parameters.AddWithValue("@patronymic", p.Text);
+                            command.Parameters.AddWithValue("@gender", g.Text);
+                            command.Parameters.AddWithValue("@email", e.Text);
+                            command.Parameters.AddWithValue("@password", Password);
+                            command.Parameters.AddWithValue("@phone", phone.Text);
+                            command.Parameters.AddWithValue("@specialization", s.Text);
+                            newId = Convert.ToInt32(command.ExecuteScalar());
+                            connection.Close();
+                        }
                     }
-                    
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error has occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
 
+                    if (Photo == PathToDeafaulPhoto)
+                    {
+                        functions.sqlInsert($"UPDATE {r.Text} SET photo = (SELECT BulkColumn FROM OPENROWSET(BULK '{Photo}', SINGLE_BLOB) AS x) WHERE id = {newId};");
+                    }
+                    if (checkBox1.Checked)
+                    {
+                        var event_id = functions.GetEventID(eventList.Text);
+                        if (r.Text == "Moderators")
+                        {
+                            functions.sqlInsert($"UPDATE [dbo].[Activity log] SET moderator_id = {newId} WHERE event_id = {event_id}");
+                        }
+                        else
+                        {
+                            functions.sqlInsert($"UPDATE [dbo].[Activity log] SET jury_id = {newId} WHERE event_id = {event_id}");
+                        }
+
+                    }
+                    MessageBox.Show("Profile has been added");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error has occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private Boolean CheckIsFieldIsNotOrWhiteSpace(List<string> field)
@@ -194,13 +215,13 @@ namespace PartyMonkey.Forms
 
         private void pictureOrganaizer_Click(object sender, EventArgs e)
         {
-
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Изображения|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 string selectedImagePath = openFileDialog.FileName;
+                Photo = selectedImagePath;
                 pictureOrganaizer.Image = Image.FromFile(selectedImagePath);
             }
 
@@ -217,7 +238,7 @@ namespace PartyMonkey.Forms
         public void BackForm()
         {
             Button BackToModeratorWin = new Button();
-            BackToModeratorWin = Buttons.createButtonBack();
+            BackToModeratorWin = Buttons.CreateButtonBack();
             BackToModeratorWin.Click += new System.EventHandler(this.BackEvent);
             BackToModeratorWin.BringToFront();
             this.Controls.Add(BackToModeratorWin);

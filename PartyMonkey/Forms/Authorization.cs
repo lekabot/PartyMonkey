@@ -37,7 +37,7 @@ namespace PartyMonkey.Forms
         public void BackForm()
         {
             Button LogOut = new Button();
-            LogOut = Buttons.createButtonBack();
+            LogOut = Buttons.CreateButtonBack();
             LogOut.Click += new System.EventHandler(this.LogOutEvent);
             LogOut.BringToFront();
             this.Controls.Add(LogOut);
