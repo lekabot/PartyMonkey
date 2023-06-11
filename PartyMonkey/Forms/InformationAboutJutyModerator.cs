@@ -15,7 +15,9 @@ namespace PartyMonkey.Forms
     public partial class InformationAboutJutyModerator : Form, IBackForm
     {
         private DBFunctions functions { get; set; }
-        private string LastName {  get; set; }
+        private string LastName { get; set; }
+        private string EventTitle { get; set; }
+        private int EventID { get; set; }
 
         public InformationAboutJutyModerator()
         {
@@ -25,61 +27,109 @@ namespace PartyMonkey.Forms
 
         private void InformationAboutJutyModerator_Load(object sender, EventArgs e)
         {
+            BackForm();
             SetDataForDGV();
             SetLastNamesToComboBox();
-        }
-
-        private void EventOrLastNameSearch()
-        {
-
-        }
-
-        private void EventSearch()
-        {
-
+            SetEventsTitlesToComboBox();
         }
 
         private void LastNameSearch()
         {
-            LastName = lastName.SelectedItem.ToString();
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("photo", typeof(Image));
+            dataTable.Columns.Add("last name", typeof(string));
+            dataTable.Columns.Add("first name", typeof(string));
+            dataTable.Columns.Add("patronymic", typeof(string));
+            dataTable.Columns.Add("e-mail", typeof(string));
+            dataTable.Columns.Add("role", typeof(string));
+
+            LastName = lastName.Text;
+            
             var findJuryLastName = functions.sqlSelect($"SELECT [photo], [last name], [first name], [patronymic], [e-mail] FROM Jury WHERE [last name] = '{LastName}'");
+            var findModerLastName = functions.sqlSelect($"SELECT [photo], [last name], [first name], [patronymic], [e-mail] FROM Moderators WHERE [last name] = '{LastName}'");
             if (findJuryLastName != null && findJuryLastName.Rows.Count > 0)
-            {
-                DataTable dataTable = new DataTable();
-                dataTable.Columns.Add("photo", typeof(Image));
-                dataTable.Columns.Add("last name", typeof(string));
-                dataTable.Columns.Add("first name", typeof(string));
-                dataTable.Columns.Add("patronymic", typeof(string));
-                dataTable.Columns.Add("e-mail", typeof(string));
-                dataTable.Columns.Add("role", typeof(string));
-
-                foreach (DataRow row in findJuryLastName.Rows)
-                {
-                    Image photo = ByteArrayToImage((byte[])row["photo"]);
-                    string lastName = row["last name"].ToString();
-                    string firstName = row["first name"].ToString();
-                    string patronymic = row["patronymic"].ToString();
-                    string email = row["e-mail"].ToString();
-
-                    // Добавление строки с данными и ролью "Жури"
-                    dataTable.Rows.Add(photo, lastName, firstName, patronymic, email, "Jury");
-                }
-                infoGrid.DataSource = dataTable;
-            }
-            else
             {
                 try
                 {
-                    var findModerLastName = functions.sqlSelect($"SELECT [photo], [last name], [first name], [patronymic], [e-mail] FROM Moderators WHERE [last name] = '{LastName}'");
-                    DataTable dataTable = new DataTable();
-                    dataTable.Columns.Add("photo", typeof(Image));
-                    dataTable.Columns.Add("last name", typeof(string));
-                    dataTable.Columns.Add("first name", typeof(string));
-                    dataTable.Columns.Add("patronymic", typeof(string));
-                    dataTable.Columns.Add("e-mail", typeof(string));
-                    dataTable.Columns.Add("role", typeof(string));
+                    
 
+                    foreach (DataRow row in findJuryLastName.Rows)
+                    {
+                        Image photo = null;
+                        if (row["photo"] != DBNull.Value)
+                        {
+                            photo = ByteArrayToImage((byte[])row["photo"]);
+                        }
+                        string lastName = row["last name"].ToString();
+                        string firstName = row["first name"].ToString();
+                        string patronymic = row["patronymic"].ToString();
+                        string email = row["e-mail"].ToString();
+                        if (!string.IsNullOrWhiteSpace(lastName))
+                        {
+                            dataTable.Rows.Add(photo, lastName, firstName, patronymic, email, "Jury");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при получении значений: {ex.Message}");
+                }
+            }
+            if (findModerLastName != null && findModerLastName.Rows.Count > 0)
+            {
+                try
+                {
                     foreach (DataRow row in findModerLastName.Rows)
+                    {
+                        Image photo = null;
+                        if (row["photo"] != DBNull.Value)
+                        {
+                            photo = ByteArrayToImage((byte[])row["photo"]);
+                        }
+                        string lastName = row["last name"].ToString();
+                        string firstName = row["first name"].ToString();
+                        string patronymic = row["patronymic"].ToString();
+                        string email = row["e-mail"].ToString();
+                        if (!string.IsNullOrWhiteSpace(lastName))
+                        {
+                            dataTable.Rows.Add(photo, lastName, firstName, patronymic, email, "Jury");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при получении значений: {ex.Message}");
+                }
+            }
+            infoGrid.DataSource = dataTable;
+            quantity.Text = (infoGrid.RowCount - 1).ToString();
+        }
+
+        private void EventSearch()
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("photo", typeof(Image));
+            dataTable.Columns.Add("last name", typeof(string));
+            dataTable.Columns.Add("first name", typeof(string));
+            dataTable.Columns.Add("patronymic", typeof(string));
+            dataTable.Columns.Add("e-mail", typeof(string));
+            dataTable.Columns.Add("role", typeof(string));
+
+            functions = new DBFunctions();
+
+            var event_id = functions.GetEventID(eventList.Text);
+            var findJuryEvent = functions.sqlSelect($"SELECT [photo], [last name], [first name], [patronymic], [e-mail] FROM Moderators " +
+                $"JOIN [Activity log] ON Moderators.id = [Activity log].moderator_id WHERE event_id = {event_id}");
+            var findmoderatorEvent = functions.sqlSelect($"SELECT [photo], [last name], [first name], [patronymic], [e-mail] FROM Jury " +
+                $"JOIN [Activity log] ON Jury.id = [Activity log].jury_id WHERE event_id = {event_id}");
+
+            if (findJuryEvent != null && findJuryEvent.Rows.Count > 0)
+            {
+                try
+                {
+                    
+
+                    foreach (DataRow row in findJuryEvent.Rows)
                     {
                         Image photo = ByteArrayToImage((byte[])row["photo"]);
                         string lastName = row["last name"].ToString();
@@ -88,15 +138,43 @@ namespace PartyMonkey.Forms
                         string email = row["e-mail"].ToString();
 
                         // Добавление строки с данными и ролью "Жури"
-                        dataTable.Rows.Add(photo, lastName, firstName, patronymic, email, "Moderator");
+                        dataTable.Rows.Add(photo, lastName, firstName, patronymic, email, "Jury");
                     }
-                    infoGrid.DataSource = dataTable;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show($"Ошибка при получении значений: {ex.Message}");
                 }
             }
+            if (findmoderatorEvent != null && findmoderatorEvent.Rows.Count > 0)
+            {
+                try
+                {
+                    foreach (DataRow row in findmoderatorEvent.Rows)
+                    {
+                        Image photo = ByteArrayToImage((byte[])row["photo"]);
+                        string lastName = row["last name"].ToString();
+                        string firstName = row["first name"].ToString();
+                        string patronymic = row["patronymic"].ToString();
+                        string email = row["e-mail"].ToString();
+                        dataTable.Rows.Add(photo, lastName, firstName, patronymic, email, "Moderator");
+                    }
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при получении значений: {ex.Message}");
+                }
+            }
+            infoGrid.DataSource = dataTable;
+            quantity.Text = (infoGrid.RowCount - 1).ToString();
+        }
+
+        private void SetEventsTitlesToComboBox()
+        {
+            DataTable eventsTitles = functions.sqlSelect("SELECT title FROM [Events]");
+            eventList.DataSource = eventsTitles;
+            eventList.DisplayMember = "Title";
         }
 
         private void SetLastNamesToComboBox()
@@ -111,7 +189,6 @@ namespace PartyMonkey.Forms
             functions = new DBFunctions();
             DataTable dataTable = new DataTable();
 
-            // Создание столбцов
             dataTable.Columns.Add("photo", typeof(Image));
             dataTable.Columns.Add("last name", typeof(string));
             dataTable.Columns.Add("first name", typeof(string));
@@ -119,35 +196,43 @@ namespace PartyMonkey.Forms
             dataTable.Columns.Add("e-mail", typeof(string));
             dataTable.Columns.Add("role", typeof(string));
 
-            // Получение данных из базы данных и добавление в DataTable
             DataTable juryData = functions.sqlSelect("SELECT [photo], [last name], [first name], [patronymic], [e-mail] FROM Jury");
             foreach (DataRow row in juryData.Rows)
             {
-                Image photo = ByteArrayToImage((byte[])row["photo"]);
+                Image photo = null;
+                if (row["photo"] != DBNull.Value)
+                {
+                    photo = ByteArrayToImage((byte[])row["photo"]);
+                }
                 string lastName = row["last name"].ToString();
                 string firstName = row["first name"].ToString();
                 string patronymic = row["patronymic"].ToString();
                 string email = row["e-mail"].ToString();
-
-                // Добавление строки с данными и ролью "Жури"
-                dataTable.Rows.Add(photo, lastName, firstName, patronymic, email, "Jury");
+                if (!string.IsNullOrWhiteSpace(lastName))
+                {
+                    dataTable.Rows.Add(photo, lastName, firstName, patronymic, email, "Jury");
+                }
             }
 
             DataTable moderData = functions.sqlSelect("SELECT [photo], [last name], [first name], [patronymic], [e-mail] FROM Moderators");
             foreach (DataRow row in moderData.Rows)
             {
-                Image photo = ByteArrayToImage((byte[])row["photo"]);
+                Image photo = null;
+                if (row["photo"] != DBNull.Value)
+                {
+                    photo = ByteArrayToImage((byte[])row["photo"]);
+                }
                 string lastName = row["last name"].ToString();
                 string firstName = row["first name"].ToString();
                 string patronymic = row["patronymic"].ToString();
                 string email = row["e-mail"].ToString();
-
-                // Добавление строки с данными и ролью "Жури"
-                dataTable.Rows.Add(photo, lastName, firstName, patronymic, email, "Moderator");
+                if (!string.IsNullOrWhiteSpace(lastName))
+                {
+                    dataTable.Rows.Add(photo, lastName, firstName, patronymic, email, "Moderator");
+                }
             }
-
-            // Привязка DataTable к DataGridView
             infoGrid.DataSource = dataTable;
+            quantity.Text = (infoGrid.RowCount - 1).ToString();
         }
 
         public Image ByteArrayToImage(byte[] byteArray)
@@ -191,7 +276,19 @@ namespace PartyMonkey.Forms
 
         private void Search_Click(object sender, EventArgs e)
         {
+            EventSearch();
+        }
+
+        private void SearchbyLastName_Click(object sender, EventArgs e)
+        {
             LastNameSearch();
+        }
+
+        private void Board_button_Click(object sender, EventArgs e)
+        {
+            Moderator_RegistrationJury moderator_RegistrationJury = new Moderator_RegistrationJury();
+            moderator_RegistrationJury.Show();
+            this.Hide();
         }
     }
 }

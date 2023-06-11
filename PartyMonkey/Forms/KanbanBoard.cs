@@ -1,17 +1,20 @@
-﻿using PartyMonkey.Classes;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using PartyMonkey.Classes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Windows.Controls;
 using System.Windows.Forms;
-using iTextSharp.text;
+using Button = System.Windows.Forms.Button;
 
 namespace PartyMonkey.Forms
-{
+{   
+    /// <summary>
+    /// Это пиздец, девочки, но это работает
+    /// </summary>
     public partial class KanbanBoard : Form, IBackForm
     {
         private string ChosenEvent { get; set; }
@@ -27,14 +30,14 @@ namespace PartyMonkey.Forms
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            
+
         }
 
         private void KanbanBoard_Load(object sender, EventArgs e)
         {
             BackForm();
             GetListEventsForComBox();
-            
+
         }
 
         private void eventList_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,7 +92,7 @@ namespace PartyMonkey.Forms
                     {
                         break; // Прекращаем цикл, если все кнопки уже созданы
                     }
-                    
+
                     Button button = new Button();
                     button.MouseDown += ButtonMouseDown;
                     button.AllowDrop = true;
@@ -183,14 +186,41 @@ namespace PartyMonkey.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (eventList.SelectedItem.ToString() != null)
+            if (eventList.SelectedItem != null)
             {
                 List<string> tableNames = functions.GetNamesFromTable(EventID);
-
+                GeneratePDF(tableNames, "D:/AAProjects/C#/PartyMonkey/PartyMonkey/PartyMonkey/pdf/3.pdf");
             }
             else
             {
                 MessageBox.Show("You have not selected an activity");
+            }
+        }
+
+        private void GeneratePDF(List<string> data, string outputPath)
+        {
+            Document document = new Document();
+            try
+            {
+                BaseFont russianFont = BaseFont.CreateFont("D:\\AAProjects\\C#\\PartyMonkey\\PartyMonkey\\PartyMonkey\\Font\\Comic Sans MS.ttf", BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+                iTextSharp.text.Font font = new iTextSharp.text.Font(russianFont, 12f);
+                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(outputPath, FileMode.OpenOrCreate));
+                document.Open();
+                PdfPTable table = new PdfPTable(1);
+                foreach (string item in data)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(item, font));
+                    table.AddCell(cell);
+                }
+                document.Add(table);
+            }
+            catch (DocumentException ex)
+            {
+                Console.WriteLine("Ошибка при создании PDF: " + ex.Message);
+            }
+            finally
+            {
+                document.Close();
             }
         }
     }

@@ -68,6 +68,12 @@ namespace PartyMonkey
             return id;
         }
 
+        public DataTable GetAllEventsTitle()
+        {
+            var id = sqlSelect($"SELECT title FROM [Events]");
+            return id;
+        }
+
         public List<string> GetNamesFromTable(int event_id)
         {
             List<string> namesList = new List<string>();
