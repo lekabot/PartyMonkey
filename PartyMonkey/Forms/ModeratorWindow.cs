@@ -36,7 +36,7 @@ namespace PartyMonkey.Forms
         {
             DataTable gotActivitiesModerator = new DataTable();
             DataTable gotActivities = new DataTable();
-            gotActivitiesModerator = functions.sqlSelect($"SELECT [activity_id] FROM [Activity log] WHERE [moderator_id] is not null");
+            gotActivitiesModerator = functions.sqlSelect($"SELECT [activity_id] FROM [Activity log] WHERE [moderator_id] is not null and [activity_id] is not null");
             gotActivities = functions.sqlSelect($"SELECT [activity_id] FROM [Activity log] WHERE [moderator_id] = '{DataBank.userID}'");
 
             if (gotActivitiesModerator.Rows.Count > 0)

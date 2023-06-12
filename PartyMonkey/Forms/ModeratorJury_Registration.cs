@@ -105,7 +105,7 @@ namespace PartyMonkey.Forms
                         }
                     }
 
-                    if (Photo == PathToDeafaulPhoto)
+                    if (Photo != PathToDeafaulPhoto)
                     {
                         functions.sqlInsert($"UPDATE {r.Text} SET photo = (SELECT BulkColumn FROM OPENROWSET(BULK '{Photo}', SINGLE_BLOB) AS x) WHERE id = {newId};");
                     }
