@@ -113,6 +113,13 @@ namespace PartyMonkey.Forms
 
         private void participantsBT_Click(object sender, EventArgs e)
         {
+            EventParticipants registrationParticipant = new EventParticipants();
+            registrationParticipant.Show();
+            this.Hide();
+        }
+
+        private void jutyBT_Click(object sender, EventArgs e)
+        {
             InformationAboutJutyModerator informationAboutJutyModerator = new InformationAboutJutyModerator();
             informationAboutJutyModerator.Show();
             this.Hide();

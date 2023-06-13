@@ -110,6 +110,7 @@
             this.jutyBT.TabIndex = 35;
             this.jutyBT.Text = "Jury";
             this.jutyBT.UseVisualStyleBackColor = false;
+            this.jutyBT.Click += new System.EventHandler(this.jutyBT_Click);
             // 
             // participantsBT
             // 

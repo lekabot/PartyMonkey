@@ -35,7 +35,6 @@ namespace PartyMonkey.Forms
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.EmailTextBox = new System.Windows.Forms.TextBox();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.signin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -97,30 +96,13 @@ namespace PartyMonkey.Forms
             this.EmailTextBox.Size = new System.Drawing.Size(250, 41);
             this.EmailTextBox.TabIndex = 7;
             // 
-            // linkLabel2
-            // 
-            this.linkLabel2.ActiveLinkColor = System.Drawing.Color.WhiteSmoke;
-            this.linkLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabel2.LinkColor = System.Drawing.Color.White;
-            this.linkLabel2.Location = new System.Drawing.Point(358, 466);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(80, 13);
-            this.linkLabel2.TabIndex = 13;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "No account yet";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
-            // 
             // signin
             // 
             this.signin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(204)))));
             this.signin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signin.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.signin.ForeColor = System.Drawing.Color.White;
-            this.signin.Location = new System.Drawing.Point(325, 387);
+            this.signin.Location = new System.Drawing.Point(324, 392);
             this.signin.Name = "signin";
             this.signin.Size = new System.Drawing.Size(167, 60);
             this.signin.TabIndex = 21;
@@ -135,7 +117,6 @@ namespace PartyMonkey.Forms
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 506);
             this.Controls.Add(this.signin);
-            this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.label_passwd);
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.PasswordTextBox);
@@ -157,7 +138,6 @@ namespace PartyMonkey.Forms
         private System.Windows.Forms.TextBox PasswordTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox EmailTextBox;
-        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.Button signin;
     }
 }

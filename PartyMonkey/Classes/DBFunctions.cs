@@ -34,15 +34,16 @@ namespace PartyMonkey
             return command;
         }
 
-        public Boolean CheckAccauntInExistDB(string chaeckUsername, string checkEmail)
+        public Boolean CheckAccauntInExistDB(string checkEmail)
         {
-            if (sqlSelect($"select username, email from customers where login = '{chaeckUsername}' OR email = '{checkEmail}'").Rows.Count > 0)
+            if (sqlSelect($"select [e-mail] from [dbo].[Users] where [e-mail] = '{checkEmail}'").Rows.Count > 0)
             {
-                return true;
+                MessageBox.Show("E-mail is already exist");
+                return false;
             }
             else
             {
-                return false;
+                return true;
             }
         }
         

@@ -21,7 +21,7 @@ namespace PartyMonkey.Forms
         public string Role { get; set; }
         public string Password { get; set; }
         public string Photo { get; set; }
-        public string PathToDeafaulPhoto { get; set; } = "D://AAProjects//C#//PartyMonkey//PartyMonkey//PartyMonkey//Resources//DefIconModerJury.png";
+        public string PathToDeafaulPhoto { get; set; } = Path.Combine(Application.StartupPath, "Resources", "DefIconModerJury.png");
 
         public Moderator_RegistrationJury()
         {
@@ -83,7 +83,7 @@ namespace PartyMonkey.Forms
             int newId;
             try
             {
-                if (CheckPasswordIsCorrect())
+                if (CheckPasswordIsCorrect() && functions.CheckAccauntInExistDB(e.Text))
                 {
                     string query = $"INSERT INTO {r.Text} ([last name], [first name], [patronymic], [gender], [e-mail], [password], [phone], [specialization]) " +
                                    "VALUES (@lastName, @firstName, @patronymic, @gender, @email, @password, @phone, @specialization) SELECT SCOPE_IDENTITY()";
@@ -226,14 +226,6 @@ namespace PartyMonkey.Forms
             }
 
         }
-
-
-
-
-
-
-
-
 
         public void BackForm()
         {

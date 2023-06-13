@@ -315,9 +315,9 @@
             // 
             // pictureOrganaizer
             // 
-            this.pictureOrganaizer.Location = new System.Drawing.Point(543, 160);
+            this.pictureOrganaizer.Location = new System.Drawing.Point(452, 160);
             this.pictureOrganaizer.Name = "pictureOrganaizer";
-            this.pictureOrganaizer.Size = new System.Drawing.Size(245, 254);
+            this.pictureOrganaizer.Size = new System.Drawing.Size(336, 254);
             this.pictureOrganaizer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureOrganaizer.TabIndex = 67;
             this.pictureOrganaizer.TabStop = false;

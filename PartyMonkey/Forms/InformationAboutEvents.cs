@@ -27,5 +27,10 @@ namespace PartyMonkey.Forms
         {
             //SELECT [Events].logo, [Events].[date], [Events].city, [Organizers].[last name], [Organizers].[first name], [Organizers].[patronymic] FROM [Activity log] JOIN [Organizers] ON [Activity log].[organizator_id] = [Organizers].[id] JOIN [Events] ON [Activity log].event_id = [Events].id WHERE [Events].id = 1
         }
+
+        internal void BackForm()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

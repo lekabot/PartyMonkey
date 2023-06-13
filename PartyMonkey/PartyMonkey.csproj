@@ -80,6 +80,12 @@
     <Compile Include="Forms\Capcha.Designer.cs">
       <DependentUpon>Capcha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EventParticipants.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EventParticipants.Designer.cs">
+      <DependentUpon>EventParticipants.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EventWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,11 +152,11 @@
     <Compile Include="Forms\OrganizerWindow.Designer.cs">
       <DependentUpon>OrganizerWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Registration.cs">
+    <Compile Include="Forms\RegistrationParticipant.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Registration.Designer.cs">
-      <DependentUpon>Registration.cs</DependentUpon>
+    <Compile Include="Forms\RegistrationParticipant.Designer.cs">
+      <DependentUpon>RegistrationParticipant.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Authorization.resx">
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Capcha.resx">
       <DependentUpon>Capcha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EventParticipants.resx">
+      <DependentUpon>EventParticipants.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\EventWindow.resx">
       <DependentUpon>EventWindow.cs</DependentUpon>
@@ -189,8 +198,8 @@
     <EmbeddedResource Include="Forms\OrganizerWindow.resx">
       <DependentUpon>OrganizerWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Registration.resx">
-      <DependentUpon>Registration.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\RegistrationParticipant.resx">
+      <DependentUpon>RegistrationParticipant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -213,10 +222,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\icon.ico" />
-    <Content Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

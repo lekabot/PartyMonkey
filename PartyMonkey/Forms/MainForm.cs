@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.CompilerServices;
 using System.Drawing.Drawing2D;
+using System.IO;
 
 namespace PartyMonkey.Forms
 {
@@ -20,7 +21,7 @@ namespace PartyMonkey.Forms
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-            Image image = Image.FromFile("D:\\AAProjects\\C#\\PartyMonkey\\PartyMonkey\\PartyMonkey\\Resources\\logo.png");
+            Image image = Image.FromFile(Path.Combine(Application.StartupPath, "Resources", "logo.png"));
             logoPictureBox.Image = image;
         }
 
@@ -31,11 +32,9 @@ namespace PartyMonkey.Forms
             this.Hide();
         }
 
-        private void signup_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-            Registration registrationForm = new Registration();
-            registrationForm.Show();
-            this.Hide();
+
         }
     }
 }

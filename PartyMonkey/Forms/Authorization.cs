@@ -114,13 +114,6 @@ namespace PartyMonkey.Forms
             timer.Dispose();
         }
 
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Registration registrationForm = new Registration();
-            registrationForm.Show();
-            this.Hide();
-        }
-
         private void roundButton2_Click(object sender, EventArgs e)
         {
             LoginAs loginAs = new LoginAs();
